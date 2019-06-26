@@ -44,22 +44,23 @@
 				<img src="images/img-01.png" alt="IMG">
 			</div>
 
-			<form class="contact1-form validate-form" method="POST" action="functions.js" id="formulario">
+			<form class="contact1-form validate-form" id="form-vigenere">
 				<span class="contact1-form-title">
 					Criptografia de Vigenere
 				</span>
 
 				
 				<div class="wrap-input1 validate-input" data-validate = "Message is required">
-					<textarea class="input1 campoDigitado cripto descripto" rows="8"
+					<textarea class="input1 cripto descripto" id="texto" name="texto" rows="8"
                             placeholder="Digite sua Mensagem!" required></textarea>
 					<span class="shadow-input1"></span>
 				</div>
-				<input type="text" class="chaveDigitada chave1 chave2" pattern="^@[0-9]$"
+				<input type="text" class="form-control chave2" id="chave" name="chave"
                               placeholder="Digite a Chave" aria-describedby="button-addon2">
 
 				<div class="container-contact1-form-btn">
-					<button class="contact1-form-btn botaoAcao botaoCri" id="button-addon2"  type="button">
+					<button class="contact1-form-btn botaoCri2" type="button" onclick="vigenere_encrypt()"
+                            name="cifrar" id="cifrar">
 						Criptografar
 					</button>
 					<button class="contact1-form-btn botaoAcao botaoCri" id="button-addon2"  type="button">
@@ -68,7 +69,7 @@
 				</div>
 				<br>
 				<div class="wrap-input1 validate-input" data-validate = "Message is required">
-					<textarea class="input1 result" required="required" rows="4" placeholder="Mensagem Descriptografada!" disabled></textarea>
+					<textarea class="input1 result2" id="resultado" name="resultado" rows="4" placeholder="Mensagem Descriptografada!" disabled></textarea>
 					<span class="shadow-input1"></span>
 				</div>
 			</form>
@@ -79,7 +80,7 @@
 
 
 <!--===============================================================================================-->
-	<script src="./js/functionsCifraCesar.js"></script>
+	<script src="./js/functionsCifraVigenere.js"></script>
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
